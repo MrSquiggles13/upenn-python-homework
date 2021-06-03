@@ -3,34 +3,35 @@ import csv
 from pathlib import Path
 
 budget_data_path = Path('/home/commander/Programs/SchoolWork/upenn-python-homework/PyBank/budget-data.csv') # Set path to budget-data.csv
-bd = budget_data = list(csv.reader(open(budget_data_path, 'r'))) # open csv as file then use csv reader to make ogject to convert to list
+bd = budget_data = list(csv.reader(open(budget_data_path, 'r')))[1:] # open csv as file then use csv reader to make ogject to convert to list
 
 # %% Initialize Variables
 months = len(bd) - 1
 net_total = 0
 greatest_increase = ['none', 0]
 greatest_decrease = ['none', 0]
+old_pnl = 0
+diffs = []
 
 # %% Loop List
 for log in bd:
-    if bd[0] == log:
-        continue
-    else:
-        pnl = int(log[1])
-        net_total += pnl
-        if int(greatest_increase[1]) < pnl:
-            greatest_increase = log
-        elif int(greatest_decrease[1]) > pnl:
-            greatest_decrease = log
-        else:
-            pass
+    pnl = int(log[1])
+    if old_pnl == 0:
+        old_pnl = pnl
+    net_total += pnl
+    if int(greatest_increase[1]) < pnl:
+        greatest_increase = log
+    elif int(greatest_decrease[1]) > pnl:
+        greatest_decrease = log
+    diffs.append(pnl - old_pnl)
+    old_pnl = pnl
     
-average_change = net_total / months
+average_change = sum(diffs) / months
 
-# create a string variable with proper calculated data
+# %% Create a string variable with proper calculated data
 line = f"Financial Analysis\n---------------------------------------\nTotal Months: {months}\nTotal Revenue: ${net_total}\nAverage Change: ${round(average_change, 2)}\nGreatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})\nGreatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})"
 
-with open('financial-analysis.txt', 'w') as file: # create new CSV file and store string variable inside
+with open('financial-analysis.txt', 'w') as file: # create new TXT file and store string variable inside
     file.write(line)
     file.close()
 
@@ -47,7 +48,7 @@ with open('financial-analysis.txt', 'w') as file: # create new CSV file and stor
 
 # net_total = bd['Profit/Losses'].sum() # sum of all P/L values
 
-# average_change = bd['Profit/Losses'].mean() # average of all P/L values
+# average_change = bd['Profit/Losses'].diff().mean() # average of all P/L change values
 
 # greatest_increase = bd[bd['Profit/Losses'] == bd['Profit/Losses'].max()].iloc[0] # creates and grabs row with greatest P/L increase
 
