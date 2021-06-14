@@ -18,11 +18,11 @@
 
 * I think
   * You
-    * will
-      * have
-        * to
-          * just
-            * dig
-              * a
-                * little
-                  * deeper...     
+    * Will
+      * Have
+        * To
+          * Just
+            * Dig
+              * A
+                * Little
+                  * Deeper...     
