@@ -35,9 +35,9 @@ i.e. Can readjust weights by determining the returns and balancing out the weigh
 
 |Resources|
 ------------
-|[Pandas Documentation](https://pandas.pydata.org/docs/)
-|[MatPlotLib Documentation](https://matplotlib.org/stable/contents.html)
+|[Pandas Documentation](https://pandas.pydata.org/docs/)|
+|[MatPlotLib Documentation](https://matplotlib.org/stable/contents.html)|
 |[Gspread Documentation](https://docs.gspread.org/en/latest/)|
-|[How I Did This](https://www.pluralsight.com/guides/working-tables-github-markdown)
-|[Basically God](https://www.google.com)
+|[How I Did This](https://www.pluralsight.com/guides/working-tables-github-markdown)|
+|[Basically God](https://www.google.com)|
 
