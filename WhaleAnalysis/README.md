@@ -34,7 +34,7 @@ Can help determine what is the best portfolio for certain trading strategies.
 i.e. Can readjust weights by determining the returns and balancing out the weights with less risky options with similar returns
 
 |Resources|
-------------
+|------------|
 |[Pandas Documentation](https://pandas.pydata.org/docs/)|
 |[MatPlotLib Documentation](https://matplotlib.org/stable/contents.html)|
 |[Gspread Documentation](https://docs.gspread.org/en/latest/)|
