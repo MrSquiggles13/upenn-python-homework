@@ -30,3 +30,10 @@
 * Slightly more weight in AGG causes a larger range yet a higher ```ci_lower```
 * Holding a few more assets to mitigate losses would be ideal
 * Diversification in general would yield a better projected outcome 
+
+|Resources|
+|--|
+|MCForecastTools ```/Python/MCForecastTools```|
+|[Alpaca Trade API](https://alpaca.markets/docs/api-documentation/)|
+|[Pandas](https://pandas.pydata.org/docs/)|
+|[Python DotENV](https://pypi.org/project/python-dotenv/)|
