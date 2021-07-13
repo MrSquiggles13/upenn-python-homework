@@ -1,0 +1,22 @@
+-- Had to restructure tables for credit_card_number column
+-- DROP TABLE credit_card;
+-- DROP TABLE transaction;
+
+-- Get card holders 2 & 18
+-- SELECT card_holder.cardholder_id,
+--     transaction.amount,
+--     transaction.date
+-- FROM card_holder
+--     LEFT JOIN credit_card on card_holder.cardholder_id = credit_card.cardholder_id
+--     LEFT JOIN transaction on transaction.card_number = credit_card.card_number
+-- WHERE card_holder.cardholder_id in (2, 18);
+
+-- Get daily transactions from jan to jun 2018 for card holder 25
+-- SELECT EXTRACT(MONTH FROM transaction.date) AS month,
+--     EXTRACT(DAY FROM transaction.date) AS day,
+--     transaction.amount
+-- FROM card_holder
+--     LEFT JOIN credit_card ON card_holder.cardholder_id = credit_card.cardholder_id
+--     LEFT JOIN transaction ON credit_card.card_number = transaction.card_number
+-- WHERE card_holder.cardholder_id in (25)
+-- AND date BETWEEN '2018-01-01' and '2018-06-30';
